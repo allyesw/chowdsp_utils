@@ -45,7 +45,7 @@ inline void aligned_free (void* data)
 
     // size is required to be a multiple of alignment!
     const auto size_padded = ((size + alignment - 1) / alignment) * alignment;
-    return std::aligned_alloc (alignment, size_padded);
+    return ::aligned_alloc (alignment, size_padded);
 
 #ifdef __clang__
 #pragma clang diagnostic pop
